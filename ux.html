@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Background Image</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=LEMON+MILK&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        @import url('https://db.onlinewebfonts.com/c/d611a2c3bffb7029747ecd544ecc6e37?family=Breul+Grotesk+A+SemiLight'); 
+
+        @font-face {
+            font-family: 'Nexa';
+            src: url('./font/font2/Nexa-Heavy.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: 'Belfast-Grotesk-Semi-Bold';
+            src: url('./font/breu/Belfast-Grotesk-Semi-Bold.ttf') format('truetype');
+        }
+        @font-face {
+            font-family: 'Quantify';
+            src: url('./font/quantify/Quantify.ttf') format('truetype');
+        }
+		body {
+			background: url('./img/bg.png') ;
+			background-size: cover;
+            overflow-x: hidden;
+		}
+        h1 {
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 85px;
+            font-family: 'Nexa', sans-serif;
+            font-weight: 5;
+            position: relative; /* Enable positioning for hover effect */
+        }
+        .first-text {
+            background: radial-gradient(circle, #6b6b6b, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .second-text {
+            background: linear-gradient(to bottom right, #FF18A4, #FAA21D);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo {
+            /* Set background */
+            background-image: url('./img/logo.png');
+            background-size: cover; /* Adjusts the background image size */
+            background-position: center; /* Centers the background image */
+            width: 230px; /* Set width */
+            height: 170px; /* Set height */
+            position: relative; /* Enable positioning for hover effect */
+            transition: transform 0.3s ease; /* Add transition effect */
+        }
+
+        .logo:hover {
+            transform: scale(0.9); /* Scale up the logo on hover */
+        }
+
+        .nav {
+            position: absolute;
+            top: 55px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 20px;
+            background-color: transparent;
+            color: #5e5e5e;
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+        }
+
+        .nav .ab {
+            color: #ffffff77;
+            text-decoration: none;
+            margin: 0 30px;/*gap between each other*/
+        }
+        .anim{
+            transition: transform 0.2s ease-in-out;
+        }
+        .anim:hover {
+            color: #ffae17ac ;
+            transform: scale(0.9);
+        }
+
+        .nav a:not(:first-child) {
+            margin-left: 40px;
+        }
+        
+        .custom-img {
+            width: 600px; /* Set the width */
+            height: auto; /* Maintain aspect ratio */
+            position: relative; /* Enable positioning */
+            top: -50px; /* Adjust the top position */
+            left: 30%; /* Adjust the left position */
+            transition: transform 0.3s ease; /* Add transition effect */
+        }
+        .custom-img img{
+            position: relative;
+            width: 600px;
+        }
+        .custom-img:hover {
+            transform: scale(0.95); /* Scale up the image on hover */
+        }       
+        .transparent-box {
+            width: 240px; /* set the width */
+            height: auto; /* set the height */
+            position: absolute; /* position the image absolutely */
+            top: 430px; /* adjust the top position */
+            left: 15%; /* adjust the left position */
+            transform: translateX(-50%); /* center the image horizontally */
+        }
+        .transparent-box2 {
+            width: 240px; /* set the width */
+            height: auto; /* set the height */
+            position: absolute; /* position the image absolutely */
+            top: 630px; /* adjust the top position */
+            left: 18%; /* adjust the left position */
+            transform: translateX(-50%) rotate(180deg); /* center the image horizontally */
+        }
+        .register{
+            position: absolute;
+            top: 50px;
+            left: 85%;
+            padding: 20px;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 17px;
+            transition: transform 0.3s ease; /* add a transition effect to the scale change */
+        }
+        .register:hover {
+            transform: scale(0.95);
+        }
+
+        .icon {
+            width: 22px; /* set the width of the image */
+            height: auto; /* maintain aspect ratio */
+            margin-left: 5px; /* add some space between the text and the image */
+        }
+
+        .btnuptext {
+            position: absolute;
+            bottom: 170px;
+            right: 140px;
+            color: #aaaaaa;
+            font-size: 25px;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 415;
+            text-align: left;
+            line-height: 2;
+            transition: transform 0.3s ease;
+        }
+        .btnuptext:hover {
+            transform: scale(0.95);
+        }
+        .get-started {
+            width: 200px;
+            height: 50px;
+            /* Font family and size */
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            /* Positioning */
+            position: absolute;
+            top: 88%;
+            left: 78%;
+            transform: translate(-50%, -50%);
+            /* Button styling */
+            padding: 10px 20px;
+            background-color: #1A1A1A; 
+            color: white;
+            border: none;
+            border-radius: 30px; /* Border radius */
+            cursor: pointer;
+            /* Transition for hover effect */
+            transition: background-color 0.3s;
+            z-index: 1; /* Behind the button */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .stroke-layer {
+            position: absolute;
+            top: 88%;
+            left: 78%;
+            transform: translate(-50%, -50%);
+            width: 206px; /* Width slightly larger than the button */
+            height: 56px; /* Height slightly larger than the button */
+            border-radius: 35px; /* Border radius */
+            background: linear-gradient(to right, #FF18A4, #FAA21D); /* Gradient background */
+            
+        }
+        
+        /* Hover effect */
+        .get-started:hover {
+            background-color: #303030; /* Darker green */
+        }
+        
+
+        /*SLIDING COROUSEL REPEAT ANIMATION*/
+        .logos {
+            overflow: hidden;
+            padding: 45px 0;/*adjust size of rectangle bg*/
+            justify-content: center;
+            background: #2c2c2c;
+            background-repeat: no-repeat;
+            margin-left: -20px;
+            width: 110%; /* adjust the width */
+            height: 5px;
+            white-space: nowrap;
+            position: relative;
+            top: -135px;
+            transform: rotate(-3deg);
+            box-shadow: 0 0 0 2px #ffffff4a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .iconscroll-text {
+            display: inline-block;
+            position: relative;
+            font-size: 22px;
+            font-family: 'Michroma', sans-serif; /* use the new font */
+            color: #ffffff;
+            margin-right: 80px; /*ADJUST GAP */
+            margin-left: 20px;
+            /*line-height: 50px;  set the line-height to the same value as the height of the .rectangular-box element */
+            white-space: nowrap;
+        }
+        .iconscroll {
+            display: inline-block;
+            width: 35px;/*ICON SIZE*/
+            height: 35px;
+            margin-right: -13%;
+            background-image: url('./img/Star.png');
+            background-size: cover;
+            position: absolute;
+            top: 50%;
+            right: -30px;
+            transform: translateY(-50%) translateX(50%); /* move the icon to the right of the text */
+        }
+        
+        .logos:hover .logos-slide {
+            animation-play-state: paused;
+        }
+        
+        .logos-slide {
+            display: inline-block;
+            animation: 35s slide infinite linear;
+        }
+        @keyframes slide {
+            from {
+            transform: translateX(0);
+            }
+            to {
+            transform: translateX(-100%);
+            }
+        }
+
+
+
+
+
+
+/*  MOVING CARD --WATCHES PHONES-- */
+        h3{
+            font-size: 110px;
+            font-family: 'Belfast-Grotesk-Semi-Bold', sans-serif;
+            text-align: center;
+            margin-top: 20px;
+            /* display: block;
+            margin: 0 auto; */
+        }
+        .tagline{
+            font-size: 17px;
+            font-family: 'Poppins', sans-serif;
+            display: block;
+            margin: 30px auto;
+            text-align: center;
+        }
+        .galactic-container {
+            position: relative;
+            white-space: nowrap;
+            top: 10px;/*SPACE BETWEEN TAGLINE*/
+        }
+
+        .galactic-carousel {
+            display: inline-block;
+        }
+
+        .galactic-card {
+            overflow: hidden;
+            white-space: nowrap;
+            display: inline-block;
+            width: 270px;
+            height: 310px;
+            background-color: #ffffff;
+            border-radius: 30px;
+            margin-right: 40px;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s ease-in-out;
+            animation: 70s galacticSlide infinite linear;/* Change SPEED*/
+            cursor: pointer; /* Change cursor to pointer on hover */
+            position: relative; /* Ensure button position is relative to card */
+        }
+
+        .galactic-card:hover {
+            transform: scale(1.10); /* Scale up the card on hover */
+        }
+
+        .galactic-action {
+            position: absolute;
+            top: 250px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: inline-block;
+            background-color: #ffffff28;
+            padding: 10px 1.5rem;
+            border-radius: 100px;
+            text-decoration: none; /* Ensure button does not inherit underline from anchor */
+            font-family: 'Bai Jamjuree', sans-serif; /* Apply the Google Font */
+            color: #ffffff;
+            border: 1px solid #ffffff; /* Add a 2px solid border with the primary color */
+        }
+
+
+        @keyframes galacticMover {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-3000px); /* adjust this value to match the total width of all cards */
+            }
+        }
+        @keyframes galacticSlide {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-3000px);
+            }
+        }
+
+
+/* Top-Notch Deals  */
+        h4{
+            font-size: 90px;
+            font-family: 'Belfast-Grotesk-Semi-Bold', sans-serif;
+            text-align: center;
+            margin-top: 200px;
+        }
+        .tagline2{
+            font-size: 17px;
+            font-family: 'Poppins', sans-serif;
+            display: block;
+            margin: 15px auto;
+            text-align: center;
+        }
+        .deals-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 50px;
+            padding: 50px;
+        }
+        .deals-card1{
+            border-radius: 40px;
+            width: 320px;
+            height: 245px;
+            background-color: #ffffff;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-image: url('./img/card1.png');
+            grid-row: 1 / 2;
+            grid-column: 1 / 4;
+        }
+        .deals-card2{
+            border-radius: 40px;
+            width: 320px;
+            height: 245px;
+            background-color: #ffffff;
+            /* position: relative;
+            margin-left: 50px;
+            margin-top: 70px; */
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-image: url('./img/card3.jpg');
+            grid-row: 2 / 2;
+            grid-column: 1 / 4;
+        }
+        .deals-card3{
+            border-radius: 40px;
+            width: 320px;
+            height: 245px;
+            background-color: #ffffff;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-image: url('./img/card3.png');
+            grid-row: 1 / 2;
+            grid-column: 2 / 4;
+        }
+        .deals-card4{
+            border-radius: 40px;
+            width: 320px;
+            height: 245px;
+            background-color: #ffffff;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-image: url('./img/card4.png');     
+            grid-row: 2 / 2;
+            grid-column: 2 / 4;
+        }
+        .deals-card5{
+            border-radius: 40px;
+            width: 320px;
+            height: 245px;
+            background-color: #ffffff;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-image: url('./img/card5.jpg');     
+            grid-row: 1 / 2;
+            grid-column: 3 / 4;
+        }
+        .deals-card6{
+            border-radius: 40px;
+            width: 320px;
+            height: 245px;
+            background-color: #ffffff;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-image: url('./img/card6.png');     
+            grid-row: 2 / 2;
+            grid-column: 3 / 4;
+        }
+        .deals-card7{
+            border-radius: 40px;
+            width: 320px;
+            height: 245px;
+            background-color: #ffffff;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-image: url('./img/card7.png');    
+            grid-row: 1 / 2;
+            grid-column: 4 / 4;
+        }
+        .deals-card8{
+            border-radius: 40px;
+            width: 320px;
+            height: 245px;
+            background-color: #ffffff;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-image: url('./img/card8.png');  
+            grid-row: 2 / 2;
+            grid-column: 4 / 4;
+        }
+        .MainTitle {
+            font-size: 22px;
+            font-family: 'Belfast-Grotesk-Semi-Bold','sans-serif';
+            margin-top: 160px;
+            margin-left: 20px;
+        }
+        .star{
+            margin-top: 3px;
+            margin-left: 20px;
+        }
+        .lightText{
+            font-family: 'Rubik','sans-serif';
+            font-size: 12px;
+            margin-left: 23px;
+            margin-top: 7px;
+            color:#ffffff3b;
+        }
+	</style>
+</head>
+
+<body>
+    <div data-aos="fade-down" data-aos-duration="700">
+        <div class="logo"></div>
+    </div>
+    
+
+    <nav class="nav">
+        <div class="ab" data-aos="fade-down" data-aos-duration="700"><div class="anim">About</div></div>
+        <div class="ab" data-aos="fade-down" data-aos-duration="900"><div class="anim">Best Sellers</div></div>
+        <div class="ab" data-aos="fade-down" data-aos-duration="1100"><div class="anim">FAQ</div></div>
+        <div class="ab" data-aos="fade-down" data-aos-duration="1300"><div class="anim">Contact Us</div></div>
+    </nav>
+    <div class ="register" data-aos="fade-down" data-aos-duration="1400">
+        <div class="anim">
+            Sign Up
+<!--img src="./img/register.png" alt="Icon" class="icon"-->
+        </div>
+    </div>
+
+    <img src="./img/Rectangle.png" class="transparent-box" >
+    <img src="./img/Rectangle.png" class="transparent-box2">
+    <h1 data-aos="zoom-out" data-aos-duration="1000">
+		<span class="first-text">Welcome To </span>
+		<span class="second-text"><br>Gadget </span>
+		<span class="second-text">Grid</span>
+	</h1>
+
+    <div class="custom-img">
+        <img src="./img/Ai1.png" data-aos="zoom-in" data-aos-duration="1400">
+    </div>
+
+    <div class="btnuptext">
+        <div  data-aos="fade-left" data-aos-duration="1100">Explore, Compare, Decide –<br> Your ultimate destination <br>for smart shopping.</div>
+    </div>
+        <button class="get-started">GET STARTED<img src="./img/RIGHTARROW.png" alt="Icon" class="icon"> </button>
+        <div class="stroke-layer"></div>        
+
+
+
+
+        <div class="logos">
+            <div class="logos-slide">
+                <span class="iconscroll-text "> Compare <i class="iciconscrollon"></i></span>
+                <span class="iconscroll-text"> Innovative <i class="iconscroll"></i></span>
+                <span class="iconscroll-text"> Time-saving <i class="iconscroll"></i></span>
+                <span class="iconscroll-text"> Latest Trends <i class="iconscroll"></i></span>
+                <span class="iconscroll-text"> Reliable <i class="iconscroll"></i></span>
+                <span class="iconscroll-text"> Wide Selection <i class="iconscroll"></i></span> 
+            </div><div class="logos-slide">
+                <span class="iconscroll-text "> Compare <i class="iconscroll"></i></span>
+                <span class="iconscroll-text"> Innovative <i class="iconscroll"></i></span>
+                <span class="iconscroll-text"> Time-saving <i class="iconscroll"></i></span>
+                <span class="iconscroll-text"> Latest Trends <i class="iconscroll"></i></span>
+                <span class="iconscroll-text"> Reliable <i class="iconscroll"></i></span>
+                <span class="iconscroll-text"> Wide Selection <i class="iconscroll"></i></span> 
+            </div>
+            <div class="logos-slide">
+                <span class="iconscroll-text "> Compare <i class="iconscroll"></i></span>
+                <span class="iconscroll-text"> Innovative <i class="iconscroll"></i></span>
+                <span class="iconscroll-text"> Time-saving <i class="iconscroll"></i></span>
+                <span class="iconscroll-text"> Latest Trends <i class="iconscroll"></i></span>
+                <span class="iconscroll-text"> Reliable <i class="iconscroll"></i></span>
+                <span class="iconscroll-text"> Wide Selection <i class="iconscroll"></i></span> 
+            </div>
+        </div>
+
+
+        
+
+<!-- MOVING CARD --WATCHES PHONES-- -->
+
+    <div data-aos="fade-up" data-aos-duration="1600">
+        <h3>
+            <span class="first-text">Popular </span>
+            <span class="second-text">Picks</span>
+        </h3>
+    </div>
+
+    <div data-aos="fade-up" data-aos-duration="1000"><span class="tagline">Discover the gadgets that everyone's talking about.</span></div>
+    <div class="galactic-container">
+        <div class="galactic-carousel">
+            <div class="galactic-container" id="galacticContainer">
+                <div class="galactic-carousel" id="galacticCarousel">
+                    <!-- Cards will be generated dynamically here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top-Notch Deals -->
+    <div data-aos="fade-up" data-aos-duration="400">
+        <h4>
+            <span class="first-text">Top-Notch </span>
+            <span class="second-text">Deals</span>
+        </h4>
+    </div>
+    <div data-aos="fade-up" data-aos-duration="600"><span class="tagline2">Explore Premium Quality at Affordable Prices.</span></div>
+    <div class="deals-container">
+
+        <div data-aos="fade-up" data-aos-duration="600">
+            <div class="deals-card1">
+                    <div class="MainTitle">HeadPhones</div>
+                    <div class="star">⭐⭐⭐⭐</div>
+                    <div class="lightText">Under Rs.5000</div>
+            </div>
+        </div>
+        
+        <div data-aos="fade-up" data-aos-duration="1200">
+            <div class="deals-card3">
+                <div class="MainTitle">Watches</div>
+                <div class="star">⭐⭐⭐⭐⭐</div>
+                <div class="lightText">Under Rs.6000</div>
+            </div>
+        </div>   
+        <div data-aos="fade-up" data-aos-duration="1800">
+            <div class="deals-card5">
+                <div class="MainTitle">Laptops</div>
+                <div class="star">⭐⭐⭐</div>
+                <div class="lightText">Under Rs.75000</div>
+            </div>
+        </div>
+        <div data-aos="fade-up" data-aos-duration="2400">
+            <div class="deals-card7">
+                <div class="MainTitle">Neck Band</div>
+                <div class="star">⭐⭐⭐⭐</div>
+                <div class="lightText">Under Rs.2000</div>
+            </div>
+        </div>
+        
+        
+        <div data-aos="fade-up" data-aos-duration="600">
+            <div class="deals-card2">
+                <div class="MainTitle">Speaker</div>
+                <div class="star">⭐⭐⭐⭐⭐</div>
+                <div class="lightText">Under Rs.10K</div>
+            </div>    
+        </div>
+        <div data-aos="fade-up" data-aos-duration="1400">
+            <div class="deals-card4">
+                <div class="MainTitle">Tablets</div>
+                <div class="star">⭐⭐⭐</div>
+                <div class="lightText">Under Rs.20K</div>
+            </div>
+        </div>
+        <div data-aos="fade-up" data-aos-duration="2200">
+            <div class="deals-card6">
+                <div class="MainTitle">Phones</div>
+                <div class="star">⭐⭐⭐⭐⭐</div>
+                <div class="lightText">Under Rs.50K</div>
+            </div>
+        </div>
+        <div class="deals-card8" data-aos="fade-up" data-aos-duration="3000">
+            <div class="MainTitle">Mouse</div>
+            <div class="star">⭐⭐⭐⭐⭐</div>  
+            <div class="lightText">Under Rs.5K</div>  
+        </div>
+    </div>
+    <!-- </div><div class="galactic-container">
+        <div class="galactic-carousel">
+            <div class="galactic-container" id="galacticContainer">
+                <div class="galactic-carousel" id="galacticCarousel">
+                    Cards will be generated dynamically here -->
+                <!-- </div>
+            </div>
+        </div>
+    </div> -->
+
+
+
+
+
+<!-- MOVING CARD --WATCHES PHONES-- -->
+        <script>
+            // Array containing objects with URLs and links for each card
+            var cardsData = [
+                { imageUrl: './img/1.jpg', link: './Pages/page1.html' },
+                { imageUrl: './img/6.jpg', link: './page2.html' },
+                { imageUrl: './img/3.jpg', link: './page3.html' },
+                { imageUrl: './img/7.jpg', link: './page4.html' },
+                { imageUrl: './img/5.jpg', link: './page5.html' },
+                { imageUrl: './img/8.jpeg', link: './page6.html' }
+            ];
+    
+            // Number of times to repeat the set of cards
+            var repeatCount = 100; // Change this to the desired number of repetitions
+    
+            var galacticCarouselDiv = document.getElementById('galacticCarousel');
+    
+            // Dynamically generate and append the cards with links
+            for (var i = 0; i < repeatCount; i++) {
+                cardsData.forEach(function(card) {
+                    var cardDiv = document.createElement('a');
+                    cardDiv.classList.add('galactic-card');
+                    cardDiv.style.backgroundImage = "url('" + card.imageUrl + "')";
+                    cardDiv.href = card.link; // Set link for each card
+                    cardDiv.target = "_blank"; // Open link in a new tab
+    
+                    var button = document.createElement('div');
+                    button.textContent = "View More";
+                    button.classList.add('galactic-action');
+    
+                    cardDiv.appendChild(button);
+                    galacticCarouselDiv.appendChild(cardDiv);
+                });
+            }
+        </script>
+    <script>
+        AOS.init({
+            offset:1,
+            duration: 600,
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.refresh();
+        });
+        window.addEventListener('load', AOS.refresh);
+    </script>
+</body>
+</html>
